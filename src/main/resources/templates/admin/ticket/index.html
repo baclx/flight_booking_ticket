@@ -12,7 +12,7 @@
 <section layout:fragment="content">
     <h1>[[${title}]]</h1>
 
-    <a class="btn btn-primary mb-4 mt-2" th:href="@{/admin/ticket/add}">
+    <a class="btn btn-primary mb-4 mt-2" th:href="@{/admin/ve-may-bay/add}">
         Add
     </a>
 
@@ -25,22 +25,36 @@
 
     <table class="table table-dark table-striped">
         <tr>
-            <th>Giá vé</th>
-            <th>Thời gian bay</th>
-            <th>Chuyến bay</th>
+            <th>Điểm khởi hành</th>
+            <th>Điểm kết thúc</th>
+<!--            <th>Số người lớn</th>-->
+<!--            <th>Số trẻ em</th>-->
+            <th>Ngày đi</th>
+            <th>Ngày về</th>
+            <th>Hạng vé</th>
+            <th>Ngày đăng ký</th>
+            <th>Số hiệu chuyến bay đi</th>
+            <th>Số hiệu chuyến bay về</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        <th:block th:each="ticket : ${ticketList}">
+        <th:block th:each="item : ${veMayBayList}">
             <tr>
-                <td>[[${ticket.price}]]</td>
-                <td>[[${ticket.time}]]</td>
-                <td>[[${ticket.flight.nameFlight}]]</td>
+                <td>[[${item.diemKhoiHanh}]]</td>
+                <td>[[${item.diemKetThuc}]]</td>
+<!--                <td>[[${item.soNgLon}]]</td>-->
+<!--                <td>[[${item.soTreEm}]]</td>-->
+                <td>[[${item.ngayDi}]]</td>
+                <td>[[${item.ngayVe}]]</td>
+                <td>[[${item.hangVe}]]</td>
+                <td>[[${item.ngayDangKy}]]</td>
+                <td>[[${item.soHieuChuyenBayDi}]]</td>
+                <td>[[${item.soHieuChuyenBayVe}]]</td>
                 <td>
-                    <a class="btn btn-primary" th:href="@{'/admin/ticket/edit/' + ${ticket.id}}">Edit</a>
+                    <a class="btn btn-primary" th:href="@{'/admin/ve-may-bay/edit/' + ${item.maDV}}">Edit</a>
                 </td>
                 <td>
-                    <a class="btn btn-danger" th:href="@{'/admin/ticket/delete/' + ${ticket.id}}">Delete</a>
+                    <a class="btn btn-danger" th:href="@{'/admin/ve-may-bay/delete/' + ${item.maDV}}">Delete</a>
                 </td>
             </tr>
         </th:block>

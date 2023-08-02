@@ -101,14 +101,14 @@
                         <div class="d-flex">
                             <input type="text" name="fromFlight" placeholder="điểm đi" th:value="${searchDto.fromFlight}">
                             <input class="ml-3 mr-3" type="text" name="toFlight" placeholder="điểm đến" th:value="${searchDto.toFlight}">
-                            <input type="date" name="dateFlight" th:value="${searchDto.dateFlight}">
+                            <input type="date" name="dateFlight">
                         </div>
                         <button class="btn btn-primary mt-3">Tìm kiếm</button>
                     </form>
                 </div>
             </div>
                 <div class="row d-flex justify-content-center align-items-stretch" id="table">
-                    <th:block th:each="ticket : ${ticketList}">
+                    <th:block th:each="item : ${veMayBayList}">
                         <div class="col-3">
                             <div class="card d-block">
                                 <img class="card-img-top" th:src="@{images/auth/backgr-auth-2.jpg}" alt="updating">
@@ -117,15 +117,19 @@
                                 </div>
                                 <div class="card-body position-relative">
                                     <h4 class="mt-0">
-                                        <a href="" class="text-title">[[${ticket.flight.nameFlight}]]</a>
+                                        <a href="" class="text-title">Hạng vé: [[${item.hangVe}]]</a>
                                     </h4>
-                                    <p>Giá vé: $[[${ticket.price}]]</p>
-                                    <p>Hãng bay: [[${ticket.flight.nameManufacturer}]]</p>
-                                    <p>Ngày bay: [[${ticket.flight.dateFlight}]]</p>
-                                    <p>Hành trình: [[${ticket.flight.fromFlight}]] - [[${ticket.flight.toFlight}]]</p>
-                                    <p>Số lượng ghế còn trống: [[${ticket.flight.numberOfSeats}]]</p>
+                                    <p>Giá vé: $[[${item.price}]]</p>
+                                    <p>Điểm khởi hành: [[${item.diemKhoiHanh}]]</p>
+                                    <p>Ngày kết thúc: [[${item.diemKetThuc}]]</p>
+                                    <p>Ngày đi: [[${#dates.format(item.ngayDi, 'dd-MM-yyyy')}]]</p>
+                                    <p>Ngày về: [[${#dates.format(item.ngayVe, 'dd-MM-yyyy')}]]</p>
+                                    <p>Số hiệu chuyến bay đi: [[${item.soHieuChuyenBayDi}]]</p>
+                                    <p>Số hiệu chuyến bay về: [[${item.soHieuChuyenBayVe}]]</p>
+                                    <p>Số lượng ghế cho người lớn: [[${item.soNgLon}]]</p>
+                                    <p>Số lượng ghế cho trẻ em: [[${item.soTreEm}]]</p>
                                     <div class="text-center mt-4 text-white">
-                                        <a th:href="@{'/form_order/' + ${ticket.id}}" class="btn btn-dark">
+                                        <a th:href="@{'/form_order/' + ${item.maDV}}" class="btn btn-dark">
                                             <i class="uil-bitcoin-circle mr-1"></i>
                                             Đặt vé
                                             <i class="uil-bitcoin-circle ml-1"></i>
