@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/index}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>[[${title}]]</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <h1>[[${title}]]</h1>
+
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Điểm khởi hành</th>
+            <th>Điểm kết thúc</th>
+            <th>Ngày đi</th>
+            <th>Ngày về</th>
+            <th>Hạng vé</th>
+<!--            <th>Ngày đăng ký</th>-->
+            <th>Số hiệu chuyến bay đi</th>
+            <th>Số hiệu chuyến bay về</th>
+        </tr>
+        <th:block th:each="item : ${ticketOrderedDtoList}">
+            <tr>
+                <td>[[${item.hoTen}]]</td>
+                <td>[[${item.sdt}]]</td>
+                <td>[[${item.diaChi}]]</td>
+                <td>[[${item.diemKhoiHanh}]]</td>
+                <td>[[${item.diemKetThuc}]]</td>
+                <td>[[${item.ngayDi}]]</td>
+                <td>[[${item.ngayVe}]]</td>
+                <td>[[${item.hangVe}]]</td>
+<!--                <td>[[${item.ngayDangKy}]]</td>-->
+                <td>[[${item.soHieuChuyenBayDi}]]</td>
+                <td>[[${item.soHieuChuyenBayVe}]]</td>
+            </tr>
+        </th:block>
+    </table>
+</section>
+</body>
+</html>

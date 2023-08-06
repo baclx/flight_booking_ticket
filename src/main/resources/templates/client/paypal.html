@@ -116,6 +116,12 @@
         <div class="container">
             <form method="post" action="/pay">
                 <div class="col-50">
+                    <div th:object="${nguoiDat}">
+                        <input type="hidden" th:field="*{sdt}">
+                        <input type="hidden" th:field="*{diaChi}">
+                        <input type="hidden" th:field="*{hoTen}">
+                        <input type="hidden" th:field="*{maDV}">
+                    </div>
                     <h3>Payment</h3>
                     <label>Accepted Cards</label>
                     <div class="icon-container">
