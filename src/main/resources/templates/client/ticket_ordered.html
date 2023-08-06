@@ -99,8 +99,12 @@
                         <th>Họ tên</th>
                         <th>Số điện thoại</th>
                         <th>Địa chỉ</th>
+                        <th>Ngày đi</th>
+                        <th>Ngày về</th>
                         <th>Điểm khởi hành</th>
                         <th>Điểm kết thúc</th>
+                        <th>Số người lớn</th>
+                        <th>Số trẻ em</th>
                         <th>Hạng vé</th>
                         <th>Số hiệu chuyến bay đi</th>
                         <th>Số hiệu chuyến bay về</th>
@@ -110,8 +114,12 @@
                             <td>[[${item.hoTen}]]</td>
                             <td>[[${item.sdt}]]</td>
                             <td>[[${item.diaChi}]]</td>
+                            <td>[[${#dates.format(item.ngayDi, 'dd-MM-yyyy')}]]</td>
+                            <td>[[${#dates.format(item.ngayVe, 'dd-MM-yyyy')}]]</td>
                             <td>[[${item.diemKhoiHanh}]]</td>
                             <td>[[${item.diemKetThuc}]]</td>
+                            <td>[[${item.soNgLon}]]</td>
+                            <td>[[${item.soTreEm}]]</td>
                             <td>[[${item.hangVe}]]</td>
                             <td>[[${item.soHieuChuyenBayDi}]]</td>
                             <td>[[${item.soHieuChuyenBayVe}]]</td>

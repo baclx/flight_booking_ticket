@@ -17,6 +17,10 @@ public class NguoiDat {
 
     private String hoTen;
 
+    private Integer soNgLon;
+
+    private Integer soTreEm;
+
     private Long idUser; // id khach hang
 
     @Column(name = "maDatVe")

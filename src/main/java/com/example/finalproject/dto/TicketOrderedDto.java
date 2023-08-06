@@ -22,6 +22,8 @@ public class TicketOrderedDto {
     // thông tin vé
     private String diemKhoiHanh;
     private String diemKetThuc;
+
+    // thông tin đặt
     private Integer soNgLon;
     private Integer soTreEm;
 
